@@ -1,0 +1,20 @@
+{
+	"name": "svelte-kit-charts",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^7.0.0",
+		"@sveltejs/kit": "^2.49.5",
+		"svelte": "^5.46.4",
+		"vite": "^7.3.1"
+	},
+	"type": "module",
+	"dependencies": {
+		"chart.js": "^4.5.1"
+	}
+}

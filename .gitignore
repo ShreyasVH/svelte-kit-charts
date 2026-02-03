@@ -1,0 +1,8 @@
+node_modules
+.envrc
+.idea
+.svelte-kit
+.DS_Store
+npmInstall.log
+server.log
+compile.log
