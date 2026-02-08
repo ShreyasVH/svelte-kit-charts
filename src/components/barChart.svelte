@@ -1,9 +1,7 @@
 <script>
-	let chartData;
 	import { onMount } from 'svelte';
 	import Chart from "chart.js/auto";
 
-	let ctx;
 	let chartCanvas;
 
 	onMount(async (promise) => {
@@ -37,4 +35,6 @@
 
 </script>
 
-<canvas bind:this={chartCanvas} id="myChart" width="400" height="400"></canvas>
+<div style="width: 400px; height: 400px">
+    <canvas bind:this={chartCanvas} id="myChart" width="400" height="400"></canvas>
+</div>
