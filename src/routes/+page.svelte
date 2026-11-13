@@ -1,9 +1,9 @@
 <script>
     import BarChart from '../components/barChart.svelte'
     import DoughnutChart from '../components/doughnutChart.svelte'
-    import { page } from '$app/stores';
+    import { page } from '$app/state'
 
-    $: type = $page.url.searchParams.get('type') ?? 'bar';
+    let type = $derived(page.url.searchParams.get('type') ?? 'bar');
 
     let dataDoughnut1 = {
         type: 'doughnut',
@@ -37,7 +37,10 @@
         type: 'doughnut',
         data: {
             labels: [ 'April', 'May', 'June' ],
-            datasets: [ { label: 'My Doughnut Chart 2', data: [33, 25, 18],
+            datasets: [
+                {
+                    label: 'My Doughnut Chart 2',
+                    data: [33, 25, 18],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
@@ -61,10 +64,11 @@
 
 <div>
     <div style="margin-bottom: 30px">
-        <a href={'?type=bar'}>Bar Chart</a>
+        <a href="?type=bar">Bar Chart</a>
         &nbsp;
-        <a href={'?type=doughnut'}>Doughnut Chart</a>
+        <a href="?type=doughnut">Doughnut Chart</a>
     </div>
+
     {#if type === 'bar'}
         <BarChart />
     {:else if type === 'doughnut'}
